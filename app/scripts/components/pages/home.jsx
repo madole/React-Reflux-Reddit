@@ -4,10 +4,13 @@ var Link = require('react-router').Link;
 var Jumbotron = require('react-bootstrap').Jumbotron;
 var RouteHandler = require('react-router').RouteHandler;
 var Alien = require('../redditAlien');
+var PollingUtils = require('../../utils/pollingUtils');
 
 var Home = React.createClass({
 
   render: function() {
+    PollingUtils.clearRhInterval();
+    PollingUtils.clearJsInterval();
     return (
       <div className='container'>
         <h1 className='header'><Alien />Reddit automator<Alien /></h1>

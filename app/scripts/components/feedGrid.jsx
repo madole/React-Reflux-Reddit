@@ -7,19 +7,11 @@ var SelfPost = require('./selfPost');
 var Vote = require('./vote');
 var NSFW = require('./nsfw');
 var Score = require('./score');
+var SubReddit = require('./subRedditTableData');
 var FeedActions = require('../actions/FeedActions');
+var RedditHomeFeedActions = require('../actions/redditHomeFeedActions');
 
-var SubReddit = React.createClass({
-  render: function() {
-    if (this.props.subreddit === 'homepage') {
-      return (
-        <td>{this.props.sub}</td>
-      )
-    } else {
-      return <span />;
-    }
-  }
-});
+
 
 
 var FeedGrid = React.createClass({
@@ -71,7 +63,8 @@ var FeedGrid = React.createClass({
   			</div>
   		)
   	} else {
-      setTimeout(FeedActions.fetchList, 2000);
+      var actions = this.props.subreddit === 'javascript' ? FeedActions : RedditHomeFeedActions;
+      setTimeout(actions.fetchList, 2000);
   		return (<div className='container'><h1 className="loading">Loading data ... </h1></div>)
   	}
   }

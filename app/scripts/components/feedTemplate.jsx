@@ -14,6 +14,7 @@ var Feed = React.createClass({
       <div className='container'>
         <h1 className='header'><Alien />{header}<Alien /></h1>
         <Link to='/'><Button className='back-button'><i className='fa fa-hand-o-left'></i> Back</Button></Link>
+
         <FeedGrid subreddit={this.props.subreddit} />
         <RouteHandler />
       </div>

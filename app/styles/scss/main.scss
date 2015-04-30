@@ -13,6 +13,10 @@ body {
   font-size: 50px;
   text-align: center;
   text-shadow: 2px 2px 2px $grey;
+
+  .fa-reddit {
+    animation: spin 3s ease-in-out 3s 2;
+  }
 }
 
 .loading {
@@ -51,10 +55,6 @@ tr:hover {
     color: $black;
     text-decoration: none;
   }
-}
-
-.header .fa-reddit {
-  animation: spin 3s ease-in-out 3s 3;
 }
 
 // Animations

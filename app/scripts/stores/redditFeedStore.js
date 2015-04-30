@@ -1,6 +1,6 @@
 var Reflux = require('reflux');
 var $ = require('jquery');
-var FeedActions = require('../actions/FeedActions');
+var RedditHomeFeedActions = require('../actions/redditHomeFeedActions');
 var storeUtils = require('../utils/storeUtils');
 
 var data = [];
@@ -8,7 +8,7 @@ var data = [];
 
 
 var FeedStore = Reflux.createStore({
-  listenables: [FeedActions],
+  listenables: [RedditHomeFeedActions],
 
   feedList: [],
 
