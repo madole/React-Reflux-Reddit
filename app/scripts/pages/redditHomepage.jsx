@@ -1,6 +1,6 @@
 var React = require('react');
-var Feed = require('./../feedTemplate');
-var PollingUtils = require('../../utils/pollingUtils');
+var Feed = require('../components/feedTemplate');
+var PollingUtils = require('../utils/pollingUtils');
 
 var redditHomepage = React.createClass({
   render: function() {

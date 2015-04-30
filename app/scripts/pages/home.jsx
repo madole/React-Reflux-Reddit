@@ -3,8 +3,8 @@ var Button = require('react-bootstrap').Button;
 var Link = require('react-router').Link;
 var Jumbotron = require('react-bootstrap').Jumbotron;
 var RouteHandler = require('react-router').RouteHandler;
-var Alien = require('../redditAlien');
-var PollingUtils = require('../../utils/pollingUtils');
+var Alien = require('../components/redditAlien');
+var PollingUtils = require('../utils/pollingUtils');
 
 var Home = React.createClass({
 
