@@ -1,17 +1,19 @@
 var Reflux = require('reflux');
 var $ = require('jquery')
-var FeedActions = require('../actions/FeedActions');
+var FeedActions = require('../actions/feedActions');
 var storeUtils = require('../utils/storeUtils');
 
 var data = [];
+var sourceUrl = '/';
 
+function updateSourceUrl(url) {
+  sourceUrl = url;
+}
 
 var FeedStore = Reflux.createStore({
 	listenables: [FeedActions],
 
 	feedList: [],
-
-	sourceUrl: 'http://www.reddit.com/r/javascript/.json',
 
   init: function() {
     this.fetchList()
@@ -20,9 +22,10 @@ var FeedStore = Reflux.createStore({
   fetchList: function() {
   	var that = this;
   	$.ajax({
-		    url: this.sourceUrl,
+		    url: sourceUrl,
 		    method: 'GET'
 		}).done(function (data) {
+        if(!data || !data.data) return;
 	      posts = storeUtils.filterAndMapData(data.data.children);
 	      console.log('Fetch complete');
 	      that.feedList = posts;
@@ -32,4 +35,7 @@ var FeedStore = Reflux.createStore({
 });
 
 
-module.exports = FeedStore;
+module.exports = {
+  FeedStore: FeedStore,
+  updateSourceUrl: updateSourceUrl
+};

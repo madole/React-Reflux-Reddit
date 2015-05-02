@@ -1,24 +1,20 @@
 var React = require('react');
 var Reflux = require('reflux');
 var Table = require('react-bootstrap').Table;
-var FeedStore = require('../stores/javascriptFeedStore');
-var RedditFeedStore = require('../stores/redditFeedStore');
+var FeedStore = require('../stores/feedStore');
 var SelfPost = require('./selfPost');
 var Vote = require('./vote');
 var NSFW = require('./nsfw');
 var Score = require('./score');
 var SubReddit = require('./subRedditTableData');
 var FeedActions = require('../actions/FeedActions');
-var RedditHomeFeedActions = require('../actions/redditHomeFeedActions');
-
-
 
 
 var FeedGrid = React.createClass({
-	mixins: [Reflux.connect(FeedStore, 'feedstore'), Reflux.connect(RedditFeedStore, 'redditfeedstore')],
+	mixins: [Reflux.connect(FeedStore.FeedStore, 'feedstore')],
 
   render: function() {
-    var store = this.props.subreddit === 'javascript' ? this.state.feedstore : this.state.redditfeedstore;
+    var store = this.state.feedstore;
     var subreddit = this.props.subreddit;
     var subRedditHeader = subreddit === 'homepage' ? <th>SubReddit</th> : '';
 
@@ -63,8 +59,7 @@ var FeedGrid = React.createClass({
   			</div>
   		)
   	} else {
-      var actions = this.props.subreddit === 'javascript' ? FeedActions : RedditHomeFeedActions;
-      setTimeout(actions.fetchList, 2000);
+      setTimeout(FeedActions.fetchList, 2000);
   		return (<div className='container'><h1 className="loading">Loading data ... </h1></div>)
   	}
   }

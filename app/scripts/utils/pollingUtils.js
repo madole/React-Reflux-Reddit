@@ -1,34 +1,20 @@
-var RedditHomeFeedActions = require('../actions/redditHomeFeedActions');
 var FeedActions = require('../actions/feedActions');
 var pollInterval = 1000*30; //30 seconds
 
-var jsInterval, rhInterval;
+var interval;
 
-function setUpJsInterval() {
-  jsInterval = setInterval(function() {
+function setUpInterval() {
+  interval = setInterval(function() {
     console.log('Polling for data ...');
     FeedActions.fetchList();
   }, pollInterval);
 }
 
-function clearJsInterval() {
-  clearInterval(jsInterval);
-}
-
-function setUpRhInterval() {
-  rhInterval = setInterval(function() {
-    console.log('Polling for data ...');
-    RedditHomeFeedActions.fetchList();
-  }, pollInterval);
-}
-
-function clearRhInterval() {
-  clearInterval(rhInterval);
+function clearPollingInterval() {
+  clearInterval(interval);
 }
 
 module.exports = {
-  setUpJsInterval: setUpJsInterval,
-  clearJsInterval: clearJsInterval,
-  setUpRhInterval: setUpRhInterval,
-  clearRhInterval: clearRhInterval
-}
+  setUpInterval: setUpInterval,
+  clearInterval: clearPollingInterval
+};

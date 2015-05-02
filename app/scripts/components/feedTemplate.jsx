@@ -9,7 +9,7 @@ var RouteHandler = require('react-router').RouteHandler;
 var Feed = React.createClass({
 
   render: function() {
-    var header = this.props.subreddit === 'javascript' ? '/r/JavaScript' : 'Reddit Homepage';
+    var header = this.props.subreddit;
     return (
       <div className='container'>
         <h1 className='header'><Alien />{header}<Alien /></h1>
