@@ -14,6 +14,13 @@ body {
     .header .header-text::first-letter {
       text-transform: capitalize; }
 
+.input-subreddit {
+  margin-bottom: 20px; }
+
+.super-button {
+  width: 200px;
+  height: 200px; }
+
 .loading {
   -webkit-animation: fadeIn 1s infinite;
           animation: fadeIn 1s infinite; }
