@@ -1,7 +1,8 @@
 var Reflux = require('reflux');
 
 var FeedActions = Reflux.createActions([
-  'fetchList'
+  'fetchList',
+  'updateUrl'
 ]);
 
 module.exports = FeedActions;

@@ -1,5 +1,5 @@
 var Reflux = require('reflux');
-var $ = require('jquery')
+var $ = require('jquery');
 var FeedActions = require('../actions/feedActions');
 var storeUtils = require('../utils/storeUtils');
 
@@ -16,7 +16,8 @@ var FeedStore = Reflux.createStore({
 	feedList: [],
 
   init: function() {
-    this.fetchList()
+    this.fetchList();
+    this.listenTo(FeedActions.updateUrl, updateSourceUrl);
   },
 
   fetchList: function() {
@@ -26,7 +27,7 @@ var FeedStore = Reflux.createStore({
 		    method: 'GET'
 		}).done(function (data) {
         if(!data || !data.data) return;
-	      posts = storeUtils.filterAndMapData(data.data.children);
+	      var posts = storeUtils.filterAndMapData(data.data.children);
 	      console.log('Fetch complete');
 	      that.feedList = posts;
 	      that.trigger(that.feedList);
@@ -35,7 +36,4 @@ var FeedStore = Reflux.createStore({
 });
 
 
-module.exports = {
-  FeedStore: FeedStore,
-  updateSourceUrl: updateSourceUrl
-};
+module.exports =  FeedStore;

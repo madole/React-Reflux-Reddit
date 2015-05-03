@@ -11,7 +11,7 @@ var FeedActions = require('../actions/FeedActions');
 
 
 var FeedGrid = React.createClass({
-	mixins: [Reflux.connect(FeedStore.FeedStore, 'feedstore')],
+	mixins: [Reflux.connect(FeedStore, 'feedstore')],
 
   render: function() {
     var store = this.state.feedstore;
