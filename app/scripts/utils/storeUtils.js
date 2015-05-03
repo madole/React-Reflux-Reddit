@@ -15,7 +15,8 @@ function filterAndMapData(posts) {
       subreddit: post.data.subreddit,
       nsfw: !!post.data.over_18,
       permalink: 'http://reddit.com' + post.data.permalink,
-      score: post.data.score
+      score: post.data.score,
+      thumbnail: post.data.thumbnail
     };
   });
 }

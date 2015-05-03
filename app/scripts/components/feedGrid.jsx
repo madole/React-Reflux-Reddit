@@ -2,12 +2,14 @@ var React = require('react');
 var Reflux = require('reflux');
 var Table = require('react-bootstrap').Table;
 var FeedStore = require('../stores/feedStore');
+var FeedActions = require('../actions/FeedActions');
 var SelfPost = require('./selfPost');
 var Vote = require('./vote');
 var NSFW = require('./nsfw');
 var Score = require('./score');
 var SubReddit = require('./subRedditTableData');
-var FeedActions = require('../actions/FeedActions');
+var Thumbnail = require('./thumbnail');
+
 
 
 var FeedGrid = React.createClass({
@@ -26,9 +28,8 @@ var FeedGrid = React.createClass({
 	  				 	<tr>
                 { subRedditHeader }
 	  				 		<th className='text-left'>Post title</th>
+	  				 		<th>Thumbnail</th>
 	  				 		<th>Score</th>
-                <th>Ups</th>
-	  				 		<th>Downs</th>
 	  				 		<th>Comments</th>
 	  				 	</tr>
 	  				 </thead>
@@ -43,13 +44,10 @@ var FeedGrid = React.createClass({
                         <NSFW nsfw={post.nsfw} />
 			  							</a>
 		  							</td>
+                    <td>
+                      <Thumbnail src={post.thumbnail} link={post.link} />
+                    </td>
                     <Score score={post.score} />
-		  							<td>
-		  							 	<Vote ups={post.ups} />
-		  							</td>
-		  							<td>
-		  							 	<Vote downs={post.downs} />
-		  							</td>
 		  							<td className='comments'><a href={post.permalink}><i className='fa fa-comment-o'></i> {post.comments} </a></td>
 		  						</tr>
 		  					);

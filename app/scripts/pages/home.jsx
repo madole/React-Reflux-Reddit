@@ -18,6 +18,12 @@ var Home = React.createClass({
     this.context.router.transitionTo('custom', {subreddit: subReddit} );
   },
 
+  onEnter: function(e) {
+    if(e.which === 13) {
+      this.onSubmit();
+    }
+  },
+
   render: function() {
     PollingUtils.clearInterval();
     return (
@@ -28,7 +34,7 @@ var Home = React.createClass({
           <Link to="reddit-homepage"><Button bsSize='large'>Hot on Reddit</Button></Link>
         </Jumbotron>
 
-        <Input type='text' label='/r/' placeholder='Enter Sub Reddit' className="subreddit-input"/>
+        <Input type='text' label='Enter a sub-Reddit' placeholder='/r/' onBlur={this.onSubmit} onKeyPress={this.onEnter} className="subreddit-input"/>
         <Button bsSize='large' onClick={this.onSubmit}>Submit</Button>
 
         <RouteHandler />
