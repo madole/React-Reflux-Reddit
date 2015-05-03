@@ -15,7 +15,9 @@ var Home = React.createClass({
 
   onSubmit: function() {
     var subReddit = $('.subreddit-input').val();
-    this.context.router.transitionTo('custom', {subreddit: subReddit} );
+    if(subReddit) {
+      this.context.router.transitionTo('custom', {subreddit: subReddit} );
+    }
   },
 
   onEnter: function(e) {
