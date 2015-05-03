@@ -12,7 +12,7 @@ var Feed = React.createClass({
     var header = this.props.subreddit;
     return (
       <div className='container'>
-        <h1 className='header'><Alien />{header}<Alien /></h1>
+        <h1 className='header'><Alien /><div className='header-text'>{header}</div><Alien /></h1>
         <Link to='/'><Button className='back-button'><i className='fa fa-hand-o-left'></i> Back</Button></Link>
 
         <FeedGrid subreddit={this.props.subreddit} />

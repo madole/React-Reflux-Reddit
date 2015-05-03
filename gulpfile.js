@@ -103,7 +103,7 @@ gulp.task('serve', function() {
 
   gulp.watch('app/scripts/**/*.js', ['scripts']);
 
-  gulp.watch('app/styles/sss/**/*.scss', ['sass']);
+  gulp.watch('app/styles/scss/**/*.scss', ['sass']);
 
   gulp.watch('app/scripts/**/*.jsx', ['scripts']);
 });

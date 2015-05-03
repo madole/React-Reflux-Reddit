@@ -17,7 +17,17 @@ body {
   .fa-reddit {
     animation: spin 3s ease-in-out 3s 1;
   }
+
+  .header-text {
+    display: inline-block;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
 }
+
+
 
 .loading {
   animation: fadeIn 1s infinite;
