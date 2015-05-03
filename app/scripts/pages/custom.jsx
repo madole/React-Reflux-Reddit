@@ -13,7 +13,7 @@ var custom = React.createClass({
   componentWillMount: function() {
     var router = this.context.router;
     var subreddit = router.getCurrentParams().subreddit;
-    this.setState({subreddit, subreddit})
+    this.setState({subreddit: subreddit});
   },
 
   render: function () {

@@ -1,5 +1,5 @@
 var React = require('react');
-var FeedGrid = require('./FeedGrid');
+var FeedGrid = require('./feedGrid');
 var Button = require('react-bootstrap').Button;
 var Link = require('react-router').Link;
 var Alien = require('./redditAlien');

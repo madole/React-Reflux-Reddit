@@ -31,7 +31,7 @@ gulp.task('scripts', function() {
       extensions: extensions,
       debug: env === 'dev'
     }).transform(preprocessify({
-      env: env,
+      env: env
     }, {
       includeExtensions: extensions
     })).transform('reactify')
