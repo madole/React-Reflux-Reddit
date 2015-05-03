@@ -1,0 +1,102 @@
+$grey: #ccc;
+$dark-grey: #808080;
+$red: #f00;
+$black: #000;
+$orange: #ff6303;
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.header {
+  font-family: 'Helvetica Neue';
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 2px 2px 2px $grey;
+
+  .fa-reddit {
+    animation: spin 3s ease-in-out 3s 1;
+  }
+
+  .header-text {
+    display: inline-block;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.input-subreddit {
+  margin-bottom: 20px;
+}
+
+.super-button {
+  height: 200px;
+  width: 200px;
+}
+
+
+.loading {
+  animation: fadeIn 1s infinite;
+}
+
+td,
+tr th {
+  text-align: center;
+}
+
+.fa-thumbs-o-up,
+.fa-thumbs-o-down,
+.fa-comment-o {
+  transition-duration: .5s;
+}
+
+tr:hover {
+  .fa-thumbs-o-up,
+  .fa-thumbs-o-down,
+  .fa-comment-o {
+    text-shadow: 1px 1px 1px $dark-grey;
+  }
+}
+
+.back-button {
+  margin-left: 15px;
+}
+
+.nsfw {
+  color: $red;
+}
+
+.fa.fa-fire {
+  color: $orange;
+}
+
+.comments {
+  a {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+// Animations
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
