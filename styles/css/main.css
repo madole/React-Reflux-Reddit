@@ -9,6 +9,10 @@ body {
   .header .fa-reddit {
     -webkit-animation: spin 3s ease-in-out 3s 1;
             animation: spin 3s ease-in-out 3s 1; }
+  .header .header-text {
+    display: inline-block; }
+    .header .header-text::first-letter {
+      text-transform: capitalize; }
 
 .loading {
   -webkit-animation: fadeIn 1s infinite;
