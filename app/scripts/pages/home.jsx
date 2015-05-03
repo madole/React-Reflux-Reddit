@@ -27,6 +27,8 @@ var Home = React.createClass({
   },
 
   render: function() {
+    PollingUtils.clearInterval();
+
     return (
       <div className='container'>
         <h1 className='header'><Alien />Reddit automator<Alien /></h1>
@@ -39,7 +41,6 @@ var Home = React.createClass({
         <RouteHandler />
       </div>
     );
-    PollingUtils.clearInterval();
   }
 });
 

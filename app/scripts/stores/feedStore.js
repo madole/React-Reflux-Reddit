@@ -4,26 +4,27 @@ var FeedActions = require('../actions/feedActions');
 var storeUtils = require('../utils/storeUtils');
 
 var data = [];
-var sourceUrl = '/';
-
-function updateSourceUrl(url) {
-  sourceUrl = url;
-}
 
 var FeedStore = Reflux.createStore({
 	listenables: [FeedActions],
 
 	feedList: [],
 
+  sourceUrl: '/',
+
+  updateSourceUrl: function(url) {
+    this.sourceUrl = url;
+  },
+
   init: function() {
     this.fetchList();
-    this.listenTo(FeedActions.updateUrl, updateSourceUrl);
+    this.listenTo(FeedActions.updateUrl, this.updateSourceUrl);
   },
 
   fetchList: function() {
   	var that = this;
   	$.ajax({
-		    url: sourceUrl,
+		    url: this.sourceUrl,
 		    method: 'GET'
 		}).done(function (data) {
         if(!data || !data.data) return;

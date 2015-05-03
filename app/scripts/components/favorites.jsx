@@ -8,7 +8,7 @@ var Favorites = React.createClass({
     return (
       <Jumbotron>
       <h2>Favorites</h2>
-      <Link to="reddit-homepage"><Button bsSize='large' title='Hot on Reddit'>Hot on Reddit</Button></Link>
+      <Link to="reddit-homepage"><Button bsSize='large' title='Hot on Reddit'>Hot on Reddit <i className='fa fa-fire'></i></Button></Link>
       <Link to="custom" params={{subreddit: 'javascript'}}><Button bsSize='large' title='All things Javascript'>/r/JavaScript</Button></Link>
       <Link to="custom" params={{subreddit: 'node'}}><Button bsSize='large' title='All things NodeJS'>/r/Node</Button></Link>
       <Link to="custom" params={{subreddit: 'webdev'}}><Button bsSize='large' title='All things WebDev'>/r/WebDev</Button></Link>

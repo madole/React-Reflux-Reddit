@@ -2,7 +2,10 @@ var React = require('react');
 var Button = require('react-bootstrap').Button;
 
 var Vote = React.createClass({
-
+  propTypes: {
+    ups: React.PropTypes.number,
+    downs: React.PropTypes.number
+  },
 	render: function() {
     var isUp = this.props.ups >= 0;
     var style = isUp ? 'success' : 'danger';

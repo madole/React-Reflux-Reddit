@@ -18,8 +18,8 @@ body {
   margin-bottom: 20px; }
 
 .super-button {
-  width: 200px;
-  height: 200px; }
+  height: 200px;
+  width: 200px; }
 
 .loading {
   -webkit-animation: fadeIn 1s infinite;
@@ -39,6 +39,9 @@ tr:hover .fa-thumbs-o-up, tr:hover .fa-thumbs-o-down, tr:hover .fa-comment-o {
 
 .nsfw {
   color: #f00; }
+
+.fa.fa-fire {
+  color: #ff6303; }
 
 .comments a {
   color: #000;

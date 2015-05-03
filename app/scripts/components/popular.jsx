@@ -21,7 +21,6 @@ var PopularSubreddits = React.createClass({
           <h2>Popular sub-reddits:</h2>
           {
             store.map(function(sub) {
-              console.log(sub);
               return (
                 <Link to="custom" params={{subreddit: sub.title}}>
                   <Button className='super-button' title={sub.subtitle}>
