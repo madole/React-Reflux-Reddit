@@ -4,7 +4,6 @@ var Table = require('react-bootstrap').Table;
 var FeedStore = require('../stores/feedStore');
 var FeedActions = require('../actions/FeedActions');
 var SelfPost = require('./selfPost');
-var Vote = require('./vote');
 var NSFW = require('./nsfw');
 var Score = require('./score');
 var SubReddit = require('./subRedditTableData');
