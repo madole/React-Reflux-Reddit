@@ -6,7 +6,7 @@ var FeedActions = require('../actions/feedActions');
 var redditHomepage = React.createClass({
 
   render: function() {
-    FeedActions.updateUrl('http://www.reddit.com/.json');
+    FeedActions.updateUrl('http://www.reddit.com/hot/.json');
     FeedActions.fetchList();
     PollingUtils.setUpInterval();
     return <Feed subreddit='homepage' />
